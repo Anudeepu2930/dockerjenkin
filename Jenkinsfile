@@ -22,8 +22,8 @@ pipeline {
                     echo 'Archiving the artifacts'
                     archiveArtifacts artifacts: '**/target/*.war'
                 }
-            }
-        }
+              }
+           }
                 stage ('Deployments'){
             parallel{
                 stage ('Deploy to Staging'){
