@@ -13,9 +13,9 @@ pipeline {
          pollSCM('* * * * *')
      }
 
-stages{
-        stage('Build'){
-            steps {
+           stages{
+               stage('Build'){
+                   steps {
                 sh 'mvn clean package'
             }
             post {
@@ -25,7 +25,7 @@ stages{
                 }
             }
         }
-stage ('Deployments'){
+                stage ('Deployments'){
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
